@@ -1,0 +1,38 @@
+server:
+  port: 8026
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    prducer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  cache:
+    type: redis
+  redis:
+    host: localhost
+    port: 6379
+  data:
+    mongodb:
+      uri: mongodb+srv://user:omarlazopassword@clusterbootcamp.28gww.mongodb.net/db_transaction_person?retryWrites=true&w=majority
+  cloud:
+    discovery:
+      enabled: true
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://${eureka.instance.hostname}:8761/eureka/
+
+kafka:
+  topic:
+    name: bootcoin-request

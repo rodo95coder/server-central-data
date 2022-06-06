@@ -1,0 +1,25 @@
+server:
+  port: 8084
+
+kafka:
+  subscribed-topic:
+    name: bootcoin-request
+  topic-to-publish:
+    name: bootcoin-response
+
+spring:
+  kafka:
+    bootstrap-server: localhost:9092
+    consumer:
+      group-id: transaction-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  cache:
+    type: redis
+  redis:
+    host: localhost
+    port: 6379
+
+ratebootcoin-api:
+  base-url: http://localhost:8050

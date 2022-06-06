@@ -1,0 +1,63 @@
+server:
+  port: 8090
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    ervice-url:
+      default-zone: http://${eureka.instance.hostname}:8761/eureka/
+
+spring:
+  cloud:
+    discovery:
+      enabled: true
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: service-customers
+          uri: lb://service-customers
+          predicates:
+            - Path=/customerPerson/**,/customerEnterprise/**
+        - id: service-product-businesscredit
+          uri: lb://service-product-businesscredit
+          predicates:
+            - Path=/businessCredit/**
+        - id: service-product-currentaccount
+          uri: lb://service-product-currentaccount
+          predicates:
+            - Path=/currentAccount/**
+        - id: service-product-fixedtermaccount
+          uri: lb://service-product-fixedtermaccount
+          predicates:
+            - Path=/fixedTermAccount/**
+        - id: service-product-fixedtermaccount
+          uri: lb://service-product-fixedtermaccount
+          predicates:
+            - Path=/fixedTermAccount/**
+        - id: service-product-personalcredit
+          uri: lb://service-product-personalcredit
+          predicates:
+            - Path=/personalCredit/**
+        - id: service-product-savingaccount
+          uri: lb://service-product-savingaccount
+          predicates:
+            - Path=/savingAccount/**
+        - id: service-transaction-enterprise
+          uri: lb://service-transaction-enterprise
+          predicates:
+            - Path=/transactionEnterprise/**
+        - id: service-transaction-person
+          uri: lb://service-transaction-person
+          predicates:
+            - Path=/transactionPerson/**
+        - id: service-rate-bootcoin
+          uri: lb://service-rate-bootcoin
+        - id: service-bootcoin
+          uri: lb://service-bootcoin
