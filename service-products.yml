@@ -3,7 +3,7 @@ server:
 spring:
   data:
     mongodb:
-        uri: mongodb+srv://user:omarlazopassword@clusterbootcamp.28gww.mongodb.net/db_product?retryWrites=true&w=majority
+        uri: mongodb+srv://rodo:nttdata@cluster0.zjvp3.mongodb.net/service-products?retryWrites=true&w=majority
 eureka:
   instance:
     hostname: localhost

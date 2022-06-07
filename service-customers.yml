@@ -4,7 +4,7 @@ server:
 spring:
   data:
     mongodb:
-      uri: mongodb+srv://user:omarlazopassword@clusterbootcamp.28gww.mongodb.net/db_customer?retryWrites=true&w=majority
+      uri: mongodb+srv://rodo:nttdata@cluster0.zjvp3.mongodb.net/service-product-savingaccount?retryWrites=true&w=majority
   cloud:
     discovery:
       enabled: true

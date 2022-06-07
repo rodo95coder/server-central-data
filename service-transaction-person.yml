@@ -14,7 +14,7 @@ spring:
     port: 6379
   data:
     mongodb:
-      uri: mongodb+srv://user:omarlazopassword@clusterbootcamp.28gww.mongodb.net/db_transaction_person?retryWrites=true&w=majority
+      uri: mongodb+srv://rodo:nttdata@cluster0.zjvp3.mongodb.net/service-transaction-person?retryWrites=true&w=majority 
   cloud:
     discovery:
       enabled: true
