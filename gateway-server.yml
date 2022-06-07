@@ -54,8 +54,14 @@ spring:
           predicates:
             - Path=/transactionEnterprise/**
         - id: service-transaction-person
-          uri: lb://service-transaction-person 
+          uri: lb://service-transaction-person
+          predicates:
+            - Path=/transactionPerson/**
         - id: service-rate-bootcoin
           uri: lb://service-rate-bootcoin
+          predicates:
+            - Path=/**
         - id: service-bootcoin
           uri: lb://service-bootcoin
+          predicates:
+            - Path=/**
